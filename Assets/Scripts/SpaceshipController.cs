@@ -14,6 +14,8 @@ public class SpaceshipController : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         rb.linearDamping = 0.1f;  
         rb.angularDamping = 0.1f; 
+
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
     void FixedUpdate()
