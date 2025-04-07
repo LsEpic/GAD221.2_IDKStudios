@@ -34,7 +34,7 @@ public class CarEngineSound : MonoBehaviour
     void Update()
     {
         // Check if the car is moving or accelerating (e.g., pressing the 'W' key)
-        if (Input.GetKey(KeyCode.W)) // Example for accelerating with 'W'
+        if (Input.GetKey(KeyCode.Q) || Input.GetKey(KeyCode.E)) // Example for accelerating with 'W'
         {
             // If not already revving, start the revving sound
             if (!isRevving)
