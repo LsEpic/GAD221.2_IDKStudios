@@ -8,6 +8,8 @@ public class SpaceshipController : MonoBehaviour
     public float rotationSpeed = 2f; // Rotation speed
 
     private Rigidbody rb;
+    
+    public ShipFuelManager fuelManager;
 
     void Start()
     {
@@ -27,16 +29,30 @@ public class SpaceshipController : MonoBehaviour
 
     void HandleMovement()
     {
-        float moveX = Input.GetAxis("Horizontal");   
-        float moveY = Input.GetAxis("Jump") - Input.GetAxis("Fire3"); 
-        float moveZ = Input.GetAxis("Vertical");     
+        float moveX = Input.GetAxis("Horizontal");
+        float moveY = Input.GetAxis("Jump") - Input.GetAxis("Fire3");
+        float moveZ = Input.GetAxis("Vertical");
 
-        // Calculate movement force
-        Vector3 moveForce = transform.right * moveX * strafePower +
-                            transform.up * moveY * strafePower +
-                            transform.forward * moveZ * thrustPower;
+        Vector3 moveForce = Vector3.zero;
 
-        // Apply it
+        bool isTryingToMove =
+            Mathf.Abs(moveX) > 0.01f ||
+            Mathf.Abs(moveY) > 0.01f ||
+            Mathf.Abs(moveZ) > 0.01f;
+
+        if (isTryingToMove && fuelManager.HasFuel())
+        {
+            moveForce += transform.right * moveX * strafePower;
+            moveForce += transform.up * moveY * strafePower;
+            moveForce += transform.forward * moveZ * thrustPower;
+
+            fuelManager.isUsingFuel = true;
+        }
+        else
+        {
+            fuelManager.isUsingFuel = false;
+        }
+
         rb.AddForce(moveForce, ForceMode.Acceleration);
     }
 

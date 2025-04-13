@@ -258,6 +258,56 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!1 &1537072183059254813
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2815306985164107061}
+  - component: {fileID: 4881410477698723835}
+  m_Layer: 0
+  m_Name: FuelManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2815306985164107061
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1537072183059254813}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.071668826, y: -0.24973345, z: -1.071607}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7020683769333529462}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4881410477698723835
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1537072183059254813}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 222270e6bb259ae44897241634dab1bb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxFuel: 100
+  currentFuel: 0
+  fuelDrainRate: 20
+  fuelRegenRate: 10
+  isUsingFuel: 0
+  fuelSlider: {fileID: 0}
 --- !u!1 &2088087693734442981
 GameObject:
   m_ObjectHideFlags: 0
@@ -336,7 +386,7 @@ GameObject:
   - component: {fileID: 7409648999507608746}
   - component: {fileID: 1314311708495898233}
   m_Layer: 0
-  m_Name: ShipPlaceholder 1
+  m_Name: ShipPrefab
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -355,6 +405,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 2815306985164107061}
   - {fileID: 3026733226852879810}
   - {fileID: 2000781039680605215}
   - {fileID: 3041465665791470720}
@@ -408,6 +459,7 @@ MonoBehaviour:
   strafePower: 7
   maxSpeed: 15
   rotationSpeed: 100
+  fuelManager: {fileID: 0}
 --- !u!54 &7409648999507608746
 Rigidbody:
   m_ObjectHideFlags: 0
