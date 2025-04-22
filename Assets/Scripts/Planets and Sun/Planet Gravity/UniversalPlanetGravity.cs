@@ -1,7 +1,6 @@
-using System;
 using UnityEngine;
 
-public class Fantasy7_Gravity : MonoBehaviour
+public class UniversalPlanetGravity : MonoBehaviour
 {
     public bool playerInGravityField = false;
     public Rigidbody playerRigidbodyReference;

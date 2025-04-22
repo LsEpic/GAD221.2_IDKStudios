@@ -7,11 +7,11 @@ public class FantasyPlanetFuel_7 : MonoBehaviour
 {
     public ShipFuelManager fuelManagerReference;
     public bool hasAddedFuelToShip = false;
-    public TextMeshProUGUI fuelTextConfirmationReference;
+    public GameObject fuelTextConfirmationReference;
 
     private void Start()
     {
-        fuelTextConfirmationReference.enabled = false;
+        fuelTextConfirmationReference.SetActive(false);
     }
 
     private void OnTriggerEnter(Collider other)
@@ -20,7 +20,7 @@ public class FantasyPlanetFuel_7 : MonoBehaviour
         {
             fuelManagerReference.AddFuel(70);
             hasAddedFuelToShip = true;
-            Debug.Log("Fantasy Planet 7 Fueled ship");
+            Debug.Log(">Fantasy Planet 7< Increased ship fuel tank!");
             ShowFuelTextConfirmation();
         }
     }
@@ -32,8 +32,9 @@ public class FantasyPlanetFuel_7 : MonoBehaviour
 
     IEnumerator FlashTextOfUpgradedFuelTank()
     {
-        fuelTextConfirmationReference.enabled = true;
+        fuelTextConfirmationReference.GetComponent<TextMeshProUGUI>().text = ">Fantasy Planet 7< Increased ship fuel tank!";
+        fuelTextConfirmationReference.SetActive(true);
         yield return new WaitForSeconds(1.5f);
-        fuelTextConfirmationReference.enabled = false;
+        fuelTextConfirmationReference.SetActive(false);
     }
 }

@@ -6,13 +6,13 @@ public class Planet7Docking : MonoBehaviour
 {
     public bool playerAbleToDock = false;
     public bool playerDocked = false;
-    public TextMeshProUGUI ableToDockText;
-    public TextMeshProUGUI dockedText;
+    public GameObject ableToDockText;
+    public GameObject dockedText;
 
     private void Start()
     {
-        ableToDockText.enabled = false;
-        dockedText.enabled = false;
+        ableToDockText.SetActive(false);
+        dockedText.SetActive(false);
     }
 
     // Update is called once per frame
@@ -34,7 +34,7 @@ public class Planet7Docking : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             playerAbleToDock = true;
-            ableToDockText.enabled = true;
+            ableToDockText.SetActive(true);
         }
     }
 
@@ -43,7 +43,7 @@ public class Planet7Docking : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             playerAbleToDock = false;
-            ableToDockText.enabled = false;
+            ableToDockText.SetActive(false);
         }
     }
 
@@ -52,10 +52,12 @@ public class Planet7Docking : MonoBehaviour
         if (!playerDocked)
         {
             playerAbleToDock = false;
-            ableToDockText.enabled = false;
-            dockedText.enabled = true;
+            ableToDockText.SetActive(false);
+            dockedText.SetActive(true);
             playerDocked = true;
             Debug.Log("Player Should be docked now!");
+            
+            // THE DOCKING SCRIPT GOES HERE MAYBE //////////////////////////////////////////////////////////////////////
         }
     }
 
@@ -64,10 +66,12 @@ public class Planet7Docking : MonoBehaviour
         if (playerDocked)
         {
             playerAbleToDock = true;
-            ableToDockText.enabled = true;
-            dockedText.enabled = false;
+            ableToDockText.SetActive(true);
+            dockedText.SetActive(false);
             playerDocked = false;
             Debug.Log("Player Should be undocked now!");
+            
+            // THE UNDOCKING SCRIPT GOES HERE MAYBE //////////////////////////////////////////////////////////////////////
         }
     }
 }

@@ -1,9 +1,17 @@
+using System.Collections;
+using TMPro;
 using UnityEngine;
 
 public class FantasyPlanetFuel_5 : MonoBehaviour
 {
     public ShipFuelManager fuelManagerReference;
     public bool hasAddedFuelToShip = false;
+    public GameObject fuelTextConfirmationReference;
+    
+    private void Start()
+    {
+        fuelTextConfirmationReference.SetActive(false);
+    }
 
     private void OnTriggerEnter(Collider other)
     {
@@ -11,7 +19,21 @@ public class FantasyPlanetFuel_5 : MonoBehaviour
         {
             fuelManagerReference.AddFuel(50);
             hasAddedFuelToShip = true;
-            Debug.Log("Fantasy Planet 5 Fueled ship");
+            Debug.Log(">Fantasy Planet 5< Increased ship fuel tank!");
+            ShowFuelTextConfirmation();
         }
+    }
+    
+    private void ShowFuelTextConfirmation()
+    {
+        StartCoroutine(FlashTextOfUpgradedFuelTank());
+    }
+
+    IEnumerator FlashTextOfUpgradedFuelTank()
+    {
+        fuelTextConfirmationReference.GetComponent<TextMeshProUGUI>().text = ">Fantasy Planet 5< Increased ship fuel tank!";
+        fuelTextConfirmationReference.SetActive(true);
+        yield return new WaitForSeconds(1.5f);
+        fuelTextConfirmationReference.SetActive(false);
     }
 }
