@@ -4,31 +4,29 @@ using UnityEngine.UI;
 public class ShipFuelManager : MonoBehaviour
 {
     [Header("Fuel Settings")]
-        public float maxFuel = 100f;
+        public float maxFuel = 200f;
         public float currentFuel;
         public float fuelDrainRate = 20f; // per second
-        public float fuelRegenRate = 10f; // per second
         public bool isUsingFuel;
         
         public Slider fuelSlider;
+        
+        public bool CanUseFuel => currentFuel > 0f;
     
         private void Start()
         {
-            currentFuel = maxFuel;
+            currentFuel = 100f;
+            UpdateFuelUI();
         }
     
         private void Update()
         {
-            if (isUsingFuel)
+            if (isUsingFuel && CanUseFuel)
             {
                 UseFuel();
             }
-            else
-            {
-                RegenerateFuel();
-            }
-            
-            fuelSlider.value = currentFuel / maxFuel;
+
+            UpdateFuelUI();
         }
     
         private void UseFuel()
@@ -36,11 +34,13 @@ public class ShipFuelManager : MonoBehaviour
             currentFuel -= fuelDrainRate * Time.deltaTime;
             currentFuel = Mathf.Clamp(currentFuel, 0, maxFuel);
         }
-    
-        private void RegenerateFuel()
+        
+        private void UpdateFuelUI()
         {
-            currentFuel += fuelRegenRate * Time.deltaTime;
-            currentFuel = Mathf.Clamp(currentFuel, 0, maxFuel);
+            if (fuelSlider != null)
+            {
+                fuelSlider.value = currentFuel / maxFuel;
+            }
         }
     
         public bool HasFuel()
@@ -51,5 +51,6 @@ public class ShipFuelManager : MonoBehaviour
         public void AddFuel(float amount) // Method for later on when we want to give player more fuel
         {
             currentFuel = Mathf.Clamp(currentFuel + amount, 0f, maxFuel);
+            UpdateFuelUI();
         }
 }
