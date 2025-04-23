@@ -17112,6 +17112,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2339521684102074109, guid: e4b6e3286901f7c47afb3e6d9a1b65b6, type: 3}
+      propertyPath: Priority
+      value: 98
+      objectReference: {fileID: 0}
     - target: {fileID: 3907317658093527296, guid: e4b6e3286901f7c47afb3e6d9a1b65b6, type: 3}
       propertyPath: m_Name
       value: ShipPrefab
@@ -17163,6 +17167,10 @@ PrefabInstance:
     - target: {fileID: 7020683769333529462, guid: e4b6e3286901f7c47afb3e6d9a1b65b6, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8274400608183222834, guid: e4b6e3286901f7c47afb3e6d9a1b65b6, type: 3}
+      propertyPath: Priority
+      value: 98
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
