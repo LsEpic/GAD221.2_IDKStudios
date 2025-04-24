@@ -66,11 +66,12 @@ public class RefuelMiniGame : MonoBehaviour
     {
         gamePanel.SetActive(false);
         Debug.Log("Minigame complete!");
-        gamePanel.SetActive(false);
         Time.timeScale = 1f;
         Cursor.lockState = CursorLockMode.Locked;
         
         fuelManager.AddFuel(200);
+        
+        GameManager.Instance.TriggerPlanetEvent(GameManager.Instance.GetNextJournalEntry());
     }
 
     void FailMinigame()

@@ -12,6 +12,10 @@ TagManager:
   - Fantasy Planet 6
   - Fantasy Planet 7
   - AsteroidSpawner
+  - BluePlanet
+  - YellowPlanet
+  - RedPlanet
+  - PurplePlanet
   layers:
   - Default
   - TransparentFX

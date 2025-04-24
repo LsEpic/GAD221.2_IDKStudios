@@ -15,7 +15,7 @@ public class ShipFuelManager : MonoBehaviour
     
         private void Start()
         {
-            currentFuel = 100f;
+            currentFuel = 150f;
             UpdateFuelUI();
         }
     

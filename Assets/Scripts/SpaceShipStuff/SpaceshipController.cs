@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class SpaceshipController : MonoBehaviour
@@ -16,11 +17,18 @@ public class SpaceshipController : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
     }
 
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.S))
+        {
+            LimitSpeed();
+        }
+    }
+
     void FixedUpdate()
     {
         HandleThrust();
         HandleRotation();
-        LimitSpeed();
     }
 
     void HandleThrust()
