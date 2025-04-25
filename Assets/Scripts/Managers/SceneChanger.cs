@@ -1,6 +1,7 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
-public class Sun : MonoBehaviour
+public class SceneChanger : MonoBehaviour
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -12,5 +13,10 @@ public class Sun : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public void GoToScene(int scene)
+    {
+        SceneManager.LoadScene(scene);
     }
 }

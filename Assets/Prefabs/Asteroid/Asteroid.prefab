@@ -4930,6 +4930,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90207d37619eb4b49a92afbdbaf4e972, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  asteroidSpawnerReference: {fileID: 0}
 --- !u!1 &6462349500693155366
 GameObject:
   m_ObjectHideFlags: 0
@@ -5016,7 +5017,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6462349500693155366}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+  m_Mesh: {fileID: -9085331004972601494, guid: 06e8368047db2dd48b6c171ed279b376, type: 3}
 --- !u!114 &2024902406730025618
 MonoBehaviour:
   m_ObjectHideFlags: 0

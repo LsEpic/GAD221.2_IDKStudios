@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 624107015137569567}
   m_Layer: 7
   m_Name: PlanetTwo
-  m_TagString: Fantasy Planet 3
+  m_TagString: PurplePlanet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -26,9 +26,9 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 960179730489437678}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 1692, y: 0, z: -729}
-  m_LocalScale: {x: 311.6145, y: 311.6145, z: 311.6145}
+  m_LocalScale: {x: 460.909, y: 460.909, z: 460.909}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7485997145271535373}
@@ -102,7 +102,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.73393, y: 0.73393, z: 0.73393}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8529838011940265040}
@@ -188,7 +188,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.9527, y: 1.9527, z: 1.9527}
+  m_LocalScale: {x: 1.5368334, y: 1.5368334, z: 1.5368334}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8529838011940265040}
@@ -208,7 +208,7 @@ SphereCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -228,3 +228,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   difficultyLevel: 0
   refuelMiniGame: {fileID: 0}
+  hasRefueledHere: 0

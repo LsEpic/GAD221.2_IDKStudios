@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1981882777506216302}
   m_Layer: 7
   m_Name: PlanetFour
-  m_TagString: Fantasy Planet 7
+  m_TagString: YellowPlanet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -26,9 +26,9 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1335234603761983533}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 3978, y: 0, z: 0}
-  m_LocalScale: {x: 157.00714, y: 157.00714, z: 157.00714}
+  m_LocalScale: {x: 144.58032, y: 144.58032, z: 144.58032}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7651601774270219492}
@@ -102,7 +102,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.9860353, y: 0.9860353, z: 0.9860353}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8608714112894630912}
@@ -188,7 +188,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.9326, y: 1.9326, z: 1.9326}
+  m_LocalScale: {x: 1.6427858, y: 1.6427858, z: 1.6427858}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8608714112894630912}
@@ -228,3 +228,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   difficultyLevel: 1
   refuelMiniGame: {fileID: 0}
+  hasRefueledHere: 0

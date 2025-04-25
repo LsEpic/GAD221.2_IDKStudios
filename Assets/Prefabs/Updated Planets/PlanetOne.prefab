@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8256129299710099685}
   m_Layer: 7
   m_Name: PlanetOne
-  m_TagString: Fantasy Planet 1
+  m_TagString: RedPlanet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -26,9 +26,9 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 134858445042650035}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 797, y: 0, z: 732}
-  m_LocalScale: {x: 119.90591, y: 119.90591, z: 119.90591}
+  m_LocalScale: {x: 156.96883, y: 156.96883, z: 156.96883}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2585802826717142025}
@@ -50,7 +50,7 @@ SphereCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -102,7 +102,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.9997, y: 1.9997, z: 1.9997}
+  m_LocalScale: {x: 1.5938208, y: 1.5938208, z: 1.5938208}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2032609833795749089}
@@ -168,7 +168,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.69973, y: 0.69973, z: 0.69973}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 2032609833795749089}
