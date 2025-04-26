@@ -15,6 +15,7 @@ public class RefuelMiniGame : MonoBehaviour
     private bool isActive = false;
     private int hitsNeeded = 1;
     private int hitsDone = 0;
+    public float addFuelAmount; 
 
     public void StartMinigame(int difficultyLevel)
     {
@@ -69,7 +70,7 @@ public class RefuelMiniGame : MonoBehaviour
         Time.timeScale = 1f;
         Cursor.lockState = CursorLockMode.Locked;
         
-        fuelManager.AddFuel(200);
+        fuelManager.AddFuel(addFuelAmount);
         
         GameManager.Instance.TriggerPlanetEvent(GameManager.Instance.GetNextJournalEntry());
     }

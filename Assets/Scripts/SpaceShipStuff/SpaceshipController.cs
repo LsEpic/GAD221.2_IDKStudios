@@ -3,10 +3,11 @@ using UnityEngine;
 
 public class SpaceshipController : MonoBehaviour
 {
-    public float thrustPower = 10f;
+    public float thrustPower = 5f;
     public float maxSpeed = 20f;
     public float rotationSpeed = 2f;
     public float rollSpeed = 50f;
+    public float fuelLeakAmount;
 
     private Rigidbody rb;
     public ShipFuelManager fuelManager;
@@ -48,6 +49,9 @@ public class SpaceshipController : MonoBehaviour
 
     void HandleRotation()
     {
+        if (!fuelManager.HasFuel())
+            return;
+        
         float pitch = -Input.GetAxis("Mouse Y"); // Inverted for flight
         float yaw = Input.GetAxis("Mouse X");
         float roll = (Input.GetKey(KeyCode.Q) ? 1f : 0f) - (Input.GetKey(KeyCode.E) ? 1f : 0f);
@@ -64,5 +68,10 @@ public class SpaceshipController : MonoBehaviour
         {
             rb.linearVelocity = rb.linearVelocity.normalized * maxSpeed;
         }
+    }
+
+    private void OnCollisionEnter(Collision other)
+    {
+        fuelManager.LeakFuel(fuelLeakAmount);
     }
 }

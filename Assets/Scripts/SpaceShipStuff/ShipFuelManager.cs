@@ -1,3 +1,5 @@
+using System.Collections;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -10,6 +12,12 @@ public class ShipFuelManager : MonoBehaviour
         public bool isUsingFuel;
         
         public Slider fuelSlider;
+        public TMP_Text outOfFuelText;
+        
+        //Leak fuel UI additions
+        [SerializeField] private Image damageFlashImage;
+        [SerializeField] private float flashDuration = 0.4f;
+        [SerializeField] private Color flashColor = new Color(1f, 0f, 0f, 0.5f);
         
         public bool CanUseFuel => currentFuel > 0f;
     
@@ -27,6 +35,15 @@ public class ShipFuelManager : MonoBehaviour
             }
 
             UpdateFuelUI();
+            
+            if (!CanUseFuel)
+            {
+                outOfFuelText.enabled = true;
+            }
+            else
+            {
+                outOfFuelText.enabled = false;
+            }
         }
     
         private void UseFuel()
@@ -52,5 +69,34 @@ public class ShipFuelManager : MonoBehaviour
         {
             currentFuel = Mathf.Clamp(currentFuel + amount, 0f, maxFuel);
             UpdateFuelUI();
+        }
+
+        public void LeakFuel(float amount)
+        {
+            Debug.Log("Fuel Leaked!");
+            currentFuel = Mathf.Clamp(currentFuel - amount, 0f, maxFuel);
+            UpdateFuelUI();
+            StartCoroutine(FlashDamage());
+        }
+        
+        private IEnumerator FlashDamage()
+        {
+            if (damageFlashImage == null) yield break;
+            
+            damageFlashImage.color = flashColor;
+            damageFlashImage.enabled = true;
+
+            float elapsedTime = 0f;
+            Color startColor = flashColor;
+            Color endColor = new Color(flashColor.r, flashColor.g, flashColor.b, 0f);
+
+            while (elapsedTime < flashDuration)
+            {
+                elapsedTime += Time.deltaTime;
+                damageFlashImage.color = Color.Lerp(startColor, endColor, elapsedTime / flashDuration);
+                yield return null;
+            }
+
+            damageFlashImage.enabled = false;
         }
 }

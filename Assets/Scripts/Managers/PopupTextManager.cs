@@ -9,7 +9,7 @@ public class PopupTextManager : MonoBehaviour
     [Header("UI References")]
     public GameObject popupPrefab;     // Assign your PopupTextUI prefab
     public Transform popupParent;      // Usually a canvas
-    public float displayTime = 10f;
+    public float displayTime = 15f;
 
     private void Awake()
     {

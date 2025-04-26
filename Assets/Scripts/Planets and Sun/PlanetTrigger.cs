@@ -9,7 +9,7 @@ public class PlanetTrigger : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player") || hasRefueledHere == false)
+        if (other.CompareTag("Player") && hasRefueledHere == false)
         {
             hasRefueledHere = true;
             refuelMiniGame.StartMinigame(difficultyLevel);
