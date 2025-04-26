@@ -14,7 +14,6 @@ public class FlightUiManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.T))
         {
-            Time.timeScale = 0;
             tutorialPanel.SetActive(true);
             Cursor.lockState = CursorLockMode.None;
         }
@@ -22,7 +21,6 @@ public class FlightUiManager : MonoBehaviour
 
     public void CloseUi()
     {
-        Time.timeScale = 1;
         tutorialPanel.SetActive(false);
         Cursor.lockState = CursorLockMode.Locked;
     }
